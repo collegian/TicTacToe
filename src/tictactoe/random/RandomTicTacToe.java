@@ -1,15 +1,11 @@
 package tictactoe.random;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 public class RandomTicTacToe 
 {
    private char board[][]=new char[3][3];
    private Random random= new Random();
-   Set<Integer> usedRows = new HashSet<>();
-   Set<Integer> usedColumns = new HashSet<>();
    
    public Result play(Piece piece)
    {
@@ -64,6 +60,11 @@ public class RandomTicTacToe
 	   }
 	   
 	   return Result.DRAW;
+   }
+   
+   public char[][] getFinalBoardConfiguration()
+   {
+	   return board;
    }
    
    private boolean doEmptyPositionsExist()
@@ -126,15 +127,15 @@ public class RandomTicTacToe
 	    }
 	   
 	   int backwardDiagonal=0;
-	   for(int i=0;i<3;i++)
+	   int i=0,j=2;
+	   while(i<3 && j>=0)
 	   {
-		   for(int j=2;j>=0;j--)
+		   if(board[i][j]==pieceRepn)
 		   {
-			   if(board[i][j]==pieceRepn)
-			   {
-				   backwardDiagonal++;
-			   }
+			   backwardDiagonal++;
 		   }
+		   i++;
+		   j--;
 	   }
 	   
 	   if(backwardDiagonal==3)

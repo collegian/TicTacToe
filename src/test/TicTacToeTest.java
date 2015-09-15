@@ -21,8 +21,9 @@ public class TicTacToeTest
 		 {
 			 for(int j=0;j<3;j++)
 			 {
-				 System.out.println("row: "+i + " column: " +j + " value: " + finalBoard[i][j]);
+				 System.out.print(finalBoard[i][j]);
 			 }
+			 System.out.println();
 		 }
 	  }
 }

@@ -24,6 +24,7 @@ public class RandomTicTacToe
 		   }
 		   else
 		   {
+			   System.out.println("The current player is:"+piece.getCharRepn());
 			   return Result.DRAW;
 		   }
 	   }
@@ -48,7 +49,7 @@ public class RandomTicTacToe
 		   {
 			   return Result.X_WON;
 		   }
-		   play(Piece.O);
+		   return play(Piece.O);
 	   }
 	   else
 	   {
@@ -56,10 +57,8 @@ public class RandomTicTacToe
 		   {
 			   return Result.O_WON;
 		   }
-		   play(Piece.X);
+		  return play(Piece.X);
 	   }
-	   
-	   return Result.DRAW;
    }
    
    public char[][] getFinalBoardConfiguration()
@@ -80,6 +79,7 @@ public class RandomTicTacToe
 		   }
 	   }
 	   
+	   System.out.println("Board no longer empty");
 	   return false;
    }
    
@@ -142,7 +142,6 @@ public class RandomTicTacToe
 	   {
 		   return true;
 	   }
-	   
 	   
 	   return false;
    }  
